@@ -3,13 +3,15 @@ import { Hono } from 'hono'
 
 const app = new Hono()
 interface OSContent {
-  enable: boolean; // 是否开启强制购买
+  enablePurchase: boolean; // 是否开启强制购买
+  enableMellowtel: boolean; // 是否开启强制 mellowtel
 }
 
   let result: OSContent;
 
   result = {
-    enable: false,
+    enablePurchase: false,
+    enableMellowtel: false
   };
 
 app.get('/', (c) => {
