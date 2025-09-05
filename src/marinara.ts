@@ -11,7 +11,7 @@ interface OSContent {
   let result: OSContent;
 
   result = {
-    enablePurchase: false,
+    enablePurchase: true,
     enableMellowtel: false
   };
 
