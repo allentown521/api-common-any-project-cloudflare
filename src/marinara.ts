@@ -69,12 +69,12 @@ app.get("/unsplash", async (c) => {
       });
       if (result.response) {
         const photo = result.response;
-        
+
         unsplash.photos.trackDownload({
-          downloadLocation: photo.links.download_location,
+          downloadLocation: photo[0].links.download_location,
         });
 
-        return c.json({ url: photo.urls.full }, 200, {
+        return c.json({ url: photo[0].urls.full }, 200, {
           "Content-Type": "application/json",
           "Cache-Control": "public, max-age=86400, s-maxage=86400",
         });
