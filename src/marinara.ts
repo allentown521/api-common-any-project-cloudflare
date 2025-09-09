@@ -36,7 +36,7 @@ app.get("/", (c) => {
   });
 });
 
-const useMixcmUnsplash = true;
+const useMixcmUnsplash = true; // 默认使用小舒扩展的api，等自己的api生产环境申请通过了，可以改成false
 const mixcmUnsplashEndpoint = "https://roam.mixcm.com/api/wall";
 const unsplash = createApi({
   accessKey: "t5-yyetI8f4n06uHaAm7jXyUK4lB0HFHMQHCOQ_0_8s",
