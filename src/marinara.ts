@@ -14,8 +14,8 @@ interface OSContent {
 let result: OSContent;
 
 result = {
-  enablePurchase: true,
-  enableMellowtel: true,
+  enablePurchase: false,
+  enableMellowtel: false,
 };
 
 // 使用 Hono 的 cors 中间件处理跨域
