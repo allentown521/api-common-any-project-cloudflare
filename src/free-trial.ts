@@ -3,7 +3,11 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { ContentfulStatusCode } from 'hono/utils/http-status';
 
-const app = new Hono()
+interface Env {
+  PLUNK_KEY: string;
+}
+
+const app = new Hono<{ Bindings: Env }>()
 
 
 // 使用 Hono 的 cors 中间件处理跨域
@@ -19,7 +23,7 @@ app.get('/', async (c) => {
   const url = 'https://plunk.focusapps.app/api/v1/contacts';
 const options = {
   method: 'POST',
-  headers: {'Content-Type': 'application/json', Authorization: 'Bearer sk_cfb50b5567f767c6238541da254c94030a621fca404a2ca8'},
+  headers: {'Content-Type': 'application/json', Authorization: `Bearer ${c.env.PLUNK_KEY}`},
   body: JSON.stringify({
     email: email,
     subscribed: true,
